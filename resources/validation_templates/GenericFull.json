@@ -1,0 +1,113 @@
+{
+    "success": true,
+    "errMsg": [],
+    "data": {
+        "rules": {
+            "1": {
+                "type": "columnHeaderIntegrity",
+                "shortDesc": "Expected Columns",
+                "longDesc": "The expected columns for this template.",
+                "errMsg": "File doesn't contains the expected columns: ",
+                "onFailure": "stop",
+                "expectedColumns": ["Name", "Address", "Phone", "Birthday", "Age", "Salary"]
+            },
+            "2": {
+                "type": "dataStructureIntegrity",
+                "shortDesc": "Data Structure Integrity",
+                "longDesc": "The expected data structure based on columns.",
+                "errMsg": "Rows of data not matching columns structure.",
+                "onFailure": "stop",
+                "expectedCount": 6
+            },
+            "3": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Name",
+                "longDesc": "Data Validation for column Name",
+                "targetColumn": "Name",
+                "validation": {
+                    "dataType": "string",
+                    "isEmpty": false,
+                    "charLength": 40
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            },
+            "4": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Address",
+                "longDesc": "Data Validation for column Address",
+                "targetColumn": "Address",
+                "validation": {
+                    "dataType": "string",
+                    "isEmpty": false,
+                    "charLength": 80
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            },
+            "5": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Phone",
+                "longDesc": "Data Validation for column Phone ",
+                "targetColumn": "Phone",
+                "validation": {
+                    "dataType": "string",
+                    "isEmpty": true,
+                    "charLength": 10
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            },
+            "6": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Birthday",
+                "longDesc": "Data Validation for column Birthday",
+                "targetColumn": "Birthday",
+                "validation": {
+                    "dataType": "date",
+                    "columnFormat": "mm/dd/yyyy",
+                    "isEmpty": false,
+                    "charLength": 10,
+                    "range": {
+                        "start": "",
+                        "end": "today - 1"
+                    }
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            },
+            "7": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Age",
+                "longDesc": "Data Validation for column Age",
+                "targetColumn": "Age",
+                "validation": {
+                    "dataType": "number",
+                    "columnFormat": "#",
+                    "isEmpty": false,
+                    "charLength": 2,
+                    "range": {
+                        "start": 15,
+                        "end": 66
+                    }
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            },
+            "8": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Salary",
+                "longDesc": "Data Validation for column Salary",
+                "targetColumn": "Salary",
+                "validation": {
+                    "dataType": "number",
+                    "columnFormat": "#",
+                    "isEmpty": false,
+                    "charLength": 8
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            }
+        }
+    }
+}

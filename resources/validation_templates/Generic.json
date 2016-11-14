@@ -1,0 +1,50 @@
+{
+    "success": true,
+    "errMsg": [],
+    "data": {
+        "rules": {
+            "1": {
+                "type": "columnHeaderIntegrity",
+                "shortDesc": "Expected Columns",
+                "longDesc": "The expected columns for this template.",
+                "errMsg": "File doesn't contains the expected columns: ",
+                "onFailure": "stop",
+                "expectedColumns": ["Name", "Address", "Phone", "Birthday", "Age", "Salary"]
+            },
+            "2": {
+                "type": "dataStructureIntegrity",
+                "shortDesc": "Data Structure Integrity",
+                "longDesc": "The expected data structure based on columns.",
+                "errMsg": "Rows of data not matching columns structure.",
+                "onFailure": "stop",
+                "expectedCount": 6
+            },
+            "3": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Name",
+                "longDesc": "Data Validation for column Name",
+                "targetColumn": "Name",
+                "validation": {
+                    "dataType": "string",
+                    "isEmpty": false,
+                    "charLength": 40
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            },
+            "4": {
+                "type": "columnValidation",
+                "shortDesc": "Validation for column: Address",
+                "longDesc": "Data Validation for column Address",
+                "targetColumn": "Address",
+                "validation": {
+                    "dataType": "string",
+                    "isEmpty": false,
+                    "charLength": 39
+                },
+                "errMsg": "This column failed its validation",
+                "onFailure": "continue"
+            }
+        }
+    }
+}

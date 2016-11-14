@@ -1,0 +1,45 @@
+/*
+ * This is is imported by virtue of "sass.etc" in "app.json".
+ */
+
+
+/* validation template rules - state column cell renderer */
+.validationIcon {
+  background-position: 5px center;
+  background-repeat: no-repeat;
+}
+.validationIcon .x-grid-cell-inner {
+  text-align: left!important;
+  margin-left: 17px;
+}
+
+.cancel {
+  background-image: url("images/cancel.png");
+}
+.failure {
+   background-image: url("images/failure.png");
+}
+.inprogress {
+  background-image: url("images/inprogress.png");
+}
+.pending {
+  background-image: url("images/pending.png");
+}
+.success {
+  background-image: url("images/success.png");
+}
+
+/* Reporting */
+
+.checkTrue {
+  background-color: #D6F8CF!important;
+}
+
+.checkFalse {
+  background-color: #FFE4E3!important;
+}
+
+.stateReportIcon {
+  background-position: center center;
+  background-repeat: no-repeat;
+}
